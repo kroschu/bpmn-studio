@@ -1,10 +1,10 @@
 # Define NodeJS docker image.
 # Here we use alpine as distribution
-ARG node_version=10-alpine
+ARG node_version=arm32v7-min
 
 
 # Create base image with project files
-FROM node:${node_version} as base
+FROM yobasystems/alpine-nodejs:${node_version} as base
 
 RUN apk add --update git tini python make g++
 
